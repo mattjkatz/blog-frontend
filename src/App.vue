@@ -40,25 +40,10 @@ nav a.router-link-exact-active {
 }
 
 #page-title {
-  margin: auto;
+  padding: 30px 0px 30px 0px;
+  font-weight: bolder;
+  font-size: 5rem;
   border: 1px solid grey;
-}
-
-#paragraphs {
-  margin: auto;
-  max-width: 66%;
-  min-width: 600px;
-  padding-left: 200px;
-  padding-right: 200px;
-}
-
-#post-title {
-  color: grey;
-  font-size: 150%;
-  font-weight: lighter;
-  padding: 0px 0px 12px 0px;
-  border-bottom: 1px solid grey;
-  text-transform: uppercase;
 }
 
 #error {
