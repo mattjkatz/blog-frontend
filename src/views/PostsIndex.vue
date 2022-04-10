@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to a bLoG",
+      message: "Welcome to me bLoG",
       posts: [],
     };
   },
@@ -24,10 +24,10 @@ export default {
 
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1 id="page-title">{{ message }}</h1>
     <div v-for="post in posts" v-bind:key="post.id">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.body }}</p>
+      <h2 id="post-title">{{ post.title }}</h2>
+      <p id="paragraphs">{{ post.body }}</p>
     </div>
   </div>
 </template>
