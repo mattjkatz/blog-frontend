@@ -28,7 +28,10 @@ export default {
     <h3>{{ post.title }}</h3>
     <p>{{ post.body }}</p>
     <img v-bind:src="post.image" v-bind:alt="post.title" />
-    <router-link to="/posts">Back to all posts</router-link>
+    <div>
+      <router-link to="/posts">Back to all posts</router-link>
+      <router-link v-bind:to="`/posts/${post.id}/edit`">Edit post</router-link>
+    </div>
   </div>
 </template>
 
