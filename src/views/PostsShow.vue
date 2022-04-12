@@ -18,6 +18,12 @@ export default {
         this.post = response.data;
       });
     },
+    destroyPost() {
+      axios.delete(`/posts/${this.post.id}`).then((response) => {
+        console.log(response.data);
+        this.$router.push("/posts");
+      });
+    },
   },
 };
 </script>
@@ -31,6 +37,7 @@ export default {
     <div>
       <router-link to="/posts">Back to all posts</router-link>
       <router-link v-bind:to="`/posts/${post.id}/edit`">Edit post</router-link>
+      <button v-on:click="destroyPost()">Delete post</button>
     </div>
   </div>
 </template>
