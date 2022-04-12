@@ -27,8 +27,8 @@ export default {
     <h1 id="page-title">{{ message }}</h1>
     <div v-for="post in posts" v-bind:key="post.id">
       <div>
-        <h2 class="column" id="post-title">{{ post.title }}</h2>
-        <p class="column" id="paragraph">{{ post.body }}</p>
+        <h2 id="post-title">{{ post.title }}</h2>
+        <p id="paragraph">{{ post.body }}</p>
         <router-link v-bind:to="`/posts/${post.id}`">
           <img v-bind:src="post.image" v-bind:alt="post.title" style="max-width: 250px" />
         </router-link>
