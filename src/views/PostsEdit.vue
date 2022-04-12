@@ -20,7 +20,7 @@ export default {
     },
     editPosts() {
       axios
-        .patch(`/posts/${this.$route.params.id}`)
+        .patch(`/posts/${this.$route.params.id}`, this.post)
         .then((response) => {
           console.log(response.data);
           this.post = response.data;
@@ -38,7 +38,7 @@ export default {
 <template>
   <div class="home">
     <h1>Edit Post</h1>
-    <form v-on:submit.prevent="editRecipe()">
+    <form v-on:submit.prevent="editPosts()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
