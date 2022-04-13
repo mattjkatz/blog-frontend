@@ -24,13 +24,13 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/posts/new">New</a>
           </li>
-          <li class="nav-item">
+          <li v-if="!isLoggedIn" class="nav-item">
             <a class="nav-link active" aria-current="page" href="/signup">Signup</a>
           </li>
-          <li class="nav-item">
+          <li v-if="!isLoggedIn" class="nav-item">
             <a class="nav-link active" aria-current="page" href="/login">Login</a>
           </li>
-          <li class="nav-item">
+          <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
           </li>
         </ul>
@@ -44,13 +44,28 @@
   <router-view />
 </template>
 
+<script>
+export default {
+  data: function () {
+    return {
+      isLoggedIn: false,
+    };
+  },
+  watch: {
+    $route: function () {
+      this.isLoggedIn = !!localStorage.jwt;
+    },
+  },
+};
+</script>
+
 <style>
 body {
   text-align: center;
 }
 
 #page-title {
-  padding: 30px 0px 30px 0px;
+  padding: 30px;
   font-weight: bolder;
   font-size: 5rem;
   border: 1px solid grey;
